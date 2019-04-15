@@ -17,7 +17,9 @@
         <!--<img class="card-img-top" src="..." alt="Card image cap">-->
         <div class="card-body">
           <h5 class="card-title">Card Title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p id="description" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a id="project-url" href="" class="btn btn-primary">View Project</a>
+          <a id="source-url" href="" class="btn btn-secondary">Github</a>
         </div>
     </div>
 
@@ -33,7 +35,13 @@
           var card = $('.template').clone();
 
           card.removeClass('template');
+
           card.find('.card-title').text(v.title);
+
+          card.find('#description').text(v.description);
+
+          card.find('#project-url').attr('href', v.project_url);
+          card.find('#source-url').attr('href', v.source_url);
 
           $('body').append(card);
         });
